@@ -1,5 +1,34 @@
 # 开箱即用的LaTeX 通用笔记模板 (基于 DJTU)
 
+## 所需工具清单
+
+在使用本模板之前，请确保您已安装以下工具：
+
+### Visual Studio Code
+*   **简介**：VS Code 是一款轻量级但功能强大的源代码编辑器，支持丰富的扩展插件。
+*   **下载地址**：[https://code.visualstudio.com/](https://code.visualstudio.com/)
+
+### TeX Live（推荐）
+*   **简介**：TeX Live 是一个完整的 LaTeX 发行版，包含了编译 LaTeX 文档所需的所有工具和宏包。
+*   **推荐理由**：
+    *   ✅ **完整跨平台**：支持 Windows、macOS 和 Linux 系统
+    *   ✅ **宏包强大**：内置数千个常用宏包，满足各类排版需求
+    *   ✅ **更新齐全**：定期更新，保持与最新 LaTeX 标准同步
+*   **下载地址**：
+    *   **国外官网**：[https://www.tug.org/texlive/](https://www.tug.org/texlive/)
+    *   **国内清华镜像源**（推荐，速度更快）：[https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/](https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/)
+
+### LaTeX Workshop 插件
+*   **简介**：这是 VS Code 的一个强大插件，提供 LaTeX 文档的编写、编译、预览等一站式支持。
+*   **安装方法**：
+    1. 打开 VS Code
+    2. 点击左侧活动栏的"扩展"图标（或按 `Ctrl + Shift + X`）
+    3. 搜索 "LaTeX Workshop"
+    4. 点击 "安装" 按钮
+*   **插件市场链接**：[LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)
+
+---
+
 ## 1. 模板格式说明
 
 本模板基于 `ctexart` 文档类，预设了符合一般学术笔记或报告的排版格式。以下是详细的格式设置参数，方便您快速了解并根据需求在 `latex/config.tex` 中进行修改。
