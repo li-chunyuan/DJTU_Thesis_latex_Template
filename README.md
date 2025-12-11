@@ -4,11 +4,11 @@
 
 在使用本模板之前，请确保您已安装以下工具：
 
-### Visual Studio Code
+### 1.Visual Studio Code
 *   **简介**：VS Code 是一款轻量级但功能强大的源代码编辑器，支持丰富的扩展插件。
 *   **下载地址**：[https://code.visualstudio.com/](https://code.visualstudio.com/)
 
-### TeX Live（推荐）
+### 2.TeX Live（推荐）
 *   **简介**：TeX Live 是一个完整的 LaTeX 发行版，包含了编译 LaTeX 文档所需的所有工具和宏包。
 *   **推荐理由**：
     *   ✅ **完整跨平台**：支持 Windows、macOS 和 Linux 系统
@@ -18,7 +18,7 @@
     *   **国外官网**：[https://www.tug.org/texlive/](https://www.tug.org/texlive/)
     *   **国内清华镜像源**（推荐，速度更快）：[https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/](https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/)
 
-### LaTeX Workshop 插件
+### 3.LaTeX Workshop 插件
 *   **简介**：这是 VS Code 的一个强大插件，提供 LaTeX 文档的编写、编译、预览等一站式支持。
 *   **安装方法**：
     1. 打开 VS Code
