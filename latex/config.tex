@@ -50,17 +50,25 @@
 % ⑤ 图表与浮动体设置
 % =============================================================
 \usepackage{graphicx}   % 插图支持
+\graphicspath{{figures/}{./figures/}}  % 设置图片搜索路径
 \usepackage{float}      % 强行不浮动 [H]
 \usepackage{subcaption} % 子图支持
 
-% 5.1 表格支持
+% 5.1 TikZ 绘图支持
+\usepackage{tikz}                     % TikZ —— 强大的绘图宏包
+\usetikzlibrary{positioning}          % 相对定位语法 (right=of, below=of)
+\usetikzlibrary{arrows.meta}          % 丰富的箭头样式
+\usetikzlibrary{shapes.geometric}     % 几何形状 (菱形、梯形等，流程图常用)
+\usetikzlibrary{calc}                 % 坐标计算 ($(A)!0.5!(B)$)
+
+% 5.2 表格支持
 \usepackage{array}      % 基础表格扩展
 \usepackage{tabularx}   % 自动列宽
 \newcolumntype{C}{>{\centering\arraybackslash}X} % 定义居中自动列
 \usepackage{booktabs}   % 三线表 (\toprule, \midrule, \bottomrule)
 \usepackage{threeparttable} % 表格附注
 
-% 5.2 题注格式 (Caption)
+% 5.3 题注格式 (Caption)
 \usepackage{caption}
 \DeclareCaptionFont{wuhao}{\zihao{5}\songti} % 定义宋体五号
 \captionsetup{
@@ -74,7 +82,7 @@
 % 图标题特殊设置 (标题在下方)
 \captionsetup[figure]{position=bottom}
 
-% 5.3 图表编号格式 (图 2-1)
+% 5.4 图表编号格式 (图 2-1)
 \numberwithin{figure}{section}
 \numberwithin{table}{section}
 \renewcommand{\thefigure}{\thesection-\arabic{figure}}
