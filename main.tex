@@ -1,5 +1,9 @@
 % ======================%一些说明：=============================
-%1.main.tex中设置了文档类、字体、纸张、页眉页脚等全局样式，请确保config.tex中的相关设置与main.tex一致，避免冲突报错。
+% 这是一个通用的中文文章 LaTeX 模板，适用于：
+% - 技术文档、学习笔记、生活随笔
+% - 课程报告、项目文档
+% - 学术论文、科技文章
+% 请确保 config.tex 中的相关设置与 main.tex 一致，避免冲突报错。
 
 
 
@@ -38,35 +42,13 @@
 \renewcommand{\sectionmark}[1]{\markboth{#1}{}} % 仅使用标题作为页眉标记
 \setcounter{page}{1}    % 强制将页码重置为 1
 
-% ---------------------第一章内容 ------------------------------------
-\include{latex/chapter1/1}
-
-% ---------------------第二章内容 ------------------------------------
-\include{latex/chapter2/2}
-
-% ---------------------第三章内容 ------------------------------------
-\include{latex/chapter3/3}
-
-% ---------------------第四章内容 ------------------------------------
-\include{latex/chapter4/4}
-
-% ---------------------第五章内容 ------------------------------------
-\include{latex/chapter5/5}
-
-% ---------------------第六章：测试参考文献----------------------------
-我们都知道爱因斯坦的相对论 \cite{einstein}。
-图灵提出了图灵机的概念 \cite{turing1936}。
-香农奠定了信息论的基础 \cite{shannon1948}。
-Knuth 开发了 TeX 系统 \cite{knuth1984}。
-
-\newpage
-
-
-
-% ---------------------参考文献---------------------------------------
-\printbibliography[heading=bibintoc, title=参考文献]
-
-
+% ---------------------正文内容 ------------------------------------
+\include{latex/chapter1/1}      % 第一章 引言
+\include{latex/chapter2/2}      % 第二章 相关理论与技术
+\include{latex/chapter3/3}      % 第三章 图表示例
+\include{latex/chapter4/4}      % 第四章 代码示例
+\include{latex/chapter5/5}      % 第五章 分析与讨论
+\include{latex/chapter6/6}      % 第六章 总结与展望
 
 
 
@@ -83,7 +65,7 @@ Knuth 开发了 TeX 系统 \cite{knuth1984}。
 %  3) 取消下面整段注释，并把 nature.jpg 改成你的真实文件名
 
 %
-% \begin{figure}[htbp]
+% \begin{figure}[H]
 %   \centering
 %   \includegraphics[width=0.8\linewidth]{figures/nature.jpg}
 %   \caption{示例图片（请替换为你的文件）}

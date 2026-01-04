@@ -1,3 +1,8 @@
+---
+name: latex-document-writer
+description: Assitant with the creation and modification about LaTeX Projects。Such as writing chapters, adding figures, creating tables, formatting code blocks, etc.
+---
+
 # latex-document-writer
 
 当你作为 AI 助手参与本项目时，请严格遵守以下指令，以确保文档逻辑一致、编译通过且排版精美。

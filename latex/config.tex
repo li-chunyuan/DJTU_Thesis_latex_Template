@@ -97,22 +97,25 @@
 % 代码高亮设置
 \usepackage{listings}
 \renewcommand{\lstlistingname}{代码}
-\lstdefinestyle{cstyle}{
-  language=C,
+\lstdefinestyle{codestyle}{
   basicstyle=\ttfamily\small,
   numbers=left,
   numberstyle=\scriptsize\color{gray},
   numbersep=8pt,
   commentstyle=\color{gray!70!black},
+  keywordstyle=\color{blue!80!black},
+  stringstyle=\color{orange!80!black},
   showstringspaces=false,
   tabsize=4,
   frame=single,
   rulecolor=\color{teal!70!blue!30},
   frameround=tttt,
   columns=fullflexible,
-  keepspaces=true
+  keepspaces=true,
+  breaklines=true,
+  breakatwhitespace=true
 }
-\lstset{style=cstyle}
+\lstset{style=codestyle}
 
 % =============================================================
 % ⑦ 章节标题与目录样式 (Styling)

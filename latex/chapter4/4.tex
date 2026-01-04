@@ -1,41 +1,68 @@
- 
 
+\section{代码示例}
 
+本章展示如何在文章中插入代码块。以下是代码块的
+使用示例，请根据实际需求修改代码内容。
 
+\subsection{基础代码示例}
 
-\section{一级标题：概述}
-这部分仍然在开发中，敬请期待！
-todo: 添加更多内容
+在此输入引出代码的过渡性文字，说明代码的功能和用途。
 
-latex
+\begin{lstlisting}[language=C, caption={结构体定义示例}, label={lst:struct_example}]
+#include <stdio.h>
 
+// 结构体定义示例
+typedef struct {
+    char name[50];          // 名称字段
+    int value;              // 数值字段
+    float data;             // 数据字段
+} ExampleStruct;
 
-这是一段中文正文，用于确认中文
-排版在 XeLaTeX 下工作正常。日本語も問題なく表示できます。
+int main() {
+    ExampleStruct example = {
+        .name = "示例",
+        .value = 100,
+        .data = 3.14
+    };
+    
+    printf("名称: %s\n", example.name);
+    printf("数值: %d\n", example.value);
+    
+    return 0;
+}
+\end{lstlisting}
 
+\subsection{函数定义示例}
 
+在此输入函数相关的说明文字，介绍函数的设计思路
+和使用方法。
 
-printf函数
+\begin{lstlisting}[language=C, caption={函数示例代码}, label={lst:function_example}]
+#include <stdio.h>
 
+// 函数1：功能说明
+void function_one() {
+    printf(">>> 步骤1: 执行操作\n");
+}
 
-字符串
-四则运算
+// 函数2：功能说明
+void function_two() {
+    printf(">>> 步骤2: 执行操作\n");
+}
 
+// 主函数
+int main() {
+    printf("=== 程序开始 ===\n\n");
+    
+    function_one();
+    function_two();
+    
+    printf("\n=== 程序结束 ===\n");
+    
+    return 0;
+}
+\end{lstlisting}
 
-终端代码语言  ./a.out cd cc 
+\subsection{本章小结}
 
-
-scanf
-
-
-变量：保存数据,变量标识符规则 
-
-\textbackslash
-我是 GitHub Copilot。
-
-
-\subsection{二级标题：背景}
-可以直接输入英文：This is an English sentence.
-
-\subsubsection{三级标题：小结}
-这里是第三级标题的内容。
+在此总结本章展示的代码示例及其使用要点。
