@@ -1,0 +1,96 @@
+% ============================================
+% 框图模板 (Block Diagram Templates)
+% 适用：系统架构、功能模块、页面布局
+% ============================================
+
+% --------------------------------------------
+% 系统架构框图（分层结构）
+% --------------------------------------------
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}[
+    layer/.style={draw, rectangle, minimum width=10cm, minimum height=1.2cm,
+                  align=center},
+    component/.style={draw, rectangle, minimum width=2.8cm, minimum height=0.8cm,
+                      fill=white, align=center}
+  ]
+    % 分层
+    \node[layer, fill=blue!15] (ui) at (0,3) {表示层 (Presentation Layer)};
+    \node[layer, fill=green!15] (biz) at (0,1.5) {业务逻辑层 (Business Layer)};
+    \node[layer, fill=orange!15] (data) at (0,0) {数据访问层 (Data Access Layer)};
+    
+    % 组件
+    \node[component] at (-3,3) {用户界面};
+    \node[component] at (0,3) {控制器};
+    \node[component] at (3,3) {视图模板};
+    
+    \node[component] at (-2,1.5) {业务服务};
+    \node[component] at (2,1.5) {验证模块};
+    
+    \node[component] at (-2,0) {数据库};
+    \node[component] at (2,0) {缓存};
+  \end{tikzpicture}
+  \caption{三层系统架构图}
+  \label{fig:architecture_layers}
+\end{figure}
+
+% --------------------------------------------
+% 模块框图（功能模块）
+% --------------------------------------------
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}[
+    module/.style={draw, rectangle, rounded corners=3pt, minimum width=2.5cm, 
+                   minimum height=1cm, align=center, fill=gray!10},
+    core/.style={draw, rectangle, rounded corners=3pt, minimum width=3cm, 
+                 minimum height=1.2cm, align=center, fill=blue!20, line width=1pt},
+    arrow/.style={<->, thick}
+  ]
+    % 核心模块
+    \node[core] (core) at (0,0) {核心控制\\模块};
+    
+    % 周边模块
+    \node[module] (m1) at (-3.5,2) {输入模块};
+    \node[module] (m2) at (0,2.5) {配置模块};
+    \node[module] (m3) at (3.5,2) {输出模块};
+    \node[module] (m4) at (-3.5,-2) {日志模块};
+    \node[module] (m5) at (0,-2.5) {存储模块};
+    \node[module] (m6) at (3.5,-2) {通信模块};
+    
+    % 连接
+    \draw[arrow] (core) -- (m1);
+    \draw[arrow] (core) -- (m2);
+    \draw[arrow] (core) -- (m3);
+    \draw[arrow] (core) -- (m4);
+    \draw[arrow] (core) -- (m5);
+    \draw[arrow] (core) -- (m6);
+  \end{tikzpicture}
+  \caption{系统功能模块图}
+  \label{fig:module_diagram}
+\end{figure}
+
+% --------------------------------------------
+% 网格布局图（页面结构）
+% --------------------------------------------
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    % 网格
+    \draw[step=1cm, gray!30, thin] (0,0) grid (5,4);
+    
+    % 布局区域
+    \draw[thick, fill=blue!20] (0,3) rectangle (5,4);
+    \node at (2.5,3.5) {页眉 (Header)};
+    
+    \draw[thick, fill=green!20] (0,1) rectangle (1.5,3);
+    \node[rotate=90] at (0.75,2) {侧边栏};
+    
+    \draw[thick, fill=yellow!20] (1.5,1) rectangle (5,3);
+    \node at (3.25,2) {主内容区 (Main)};
+    
+    \draw[thick, fill=red!20] (0,0) rectangle (5,1);
+    \node at (2.5,0.5) {页脚 (Footer)};
+  \end{tikzpicture}
+  \caption{网页布局结构图}
+  \label{fig:grid_layout}
+\end{figure}

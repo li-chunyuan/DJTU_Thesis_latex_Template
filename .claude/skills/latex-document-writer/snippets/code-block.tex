@@ -1,0 +1,48 @@
+% ============================================
+% 代码块模板 (Code Block Templates)
+% 使用 lstlisting 环境，需配合 config.tex 中的设置
+% ============================================
+
+% --------------------------------------------
+% 基础默认模板
+% --------------------------------------------
+\begin{lstlisting}[language=C, caption={说明文字}, label={lst:xxx}]
+// 代码内容
+\end{lstlisting}
+
+% --------------------------------------------
+% 各语言示例
+% --------------------------------------------
+
+% C 语言
+\begin{lstlisting}[language=C, caption={指针初始化示例}, label={lst:ptr_init}]
+int *p = NULL;
+int value = 42;
+p = &value;
+\end{lstlisting}
+
+% Python
+\begin{lstlisting}[language=Python, caption={列表推导式示例}, label={lst:list_comp}]
+squares = [x**2 for x in range(10)]
+\end{lstlisting}
+
+% Java
+\begin{lstlisting}[language=Java, caption={类定义示例}, label={lst:java_class}]
+public class Example {
+    private int value;
+    
+    public Example(int value) {
+        this.value = value;
+    }
+}
+\end{lstlisting}
+
+% JavaScript
+\begin{lstlisting}[language=JavaScript, caption={箭头函数示例}, label={lst:js_arrow}]
+const add = (a, b) => a + b;
+\end{lstlisting}
+
+% SQL
+\begin{lstlisting}[language=SQL, caption={查询语句示例}, label={lst:sql_query}]
+SELECT name, age FROM users WHERE age > 18;
+\end{lstlisting}

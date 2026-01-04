@@ -1,0 +1,52 @@
+% ============================================
+% TikZ 图形模板索引 (TikZ Figure Templates Index)
+% ============================================
+% 
+% 本文件夹包含按类型分类的 TikZ 模板：
+%
+% flowchart.tex   - 流程图（条件分支、循环、步骤）
+% block.tex       - 框图（系统架构、模块、布局）
+% tree.tex        - 树状结构（二叉树、目录树、组织图）
+% relation.tex    - 关系图（ER图、拓扑、时序、状态机、类图）
+% data-struct.tex - 数据结构（内存、指针、链表、数组）
+% chart.tex       - 图表（坐标系、韦恩图、饼图、柱状图）
+%
+% ============================================
+
+% --------------------------------------------
+% 基础模板（所有 TikZ 图形的骨架）
+% --------------------------------------------
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}[scale=0.8]
+    % 在此添加绘图代码
+  \end{tikzpicture}
+  \caption{图形说明}
+  \label{fig:xxx}
+\end{figure}
+
+% --------------------------------------------
+% 常用样式定义参考
+% --------------------------------------------
+% 
+% 节点样式：
+%   draw              - 绘制边框
+%   rectangle         - 矩形
+%   circle            - 圆形
+%   diamond           - 菱形
+%   ellipse           - 椭圆
+%   rounded corners   - 圆角
+%   minimum width/height - 最小尺寸
+%   fill=color!N      - 填充颜色（N为透明度百分比）
+%   align=center      - 文本对齐
+%
+% 箭头样式：
+%   ->                - 单向箭头
+%   <->               - 双向箭头
+%   ->, >=stealth     - 尖锐箭头
+%   thick/very thick  - 线条粗细
+%
+% 定位：
+%   at (x,y)          - 绝对坐标
+%   above/below/left/right of - 相对定位
+%   node[midway]      - 线段中点标注

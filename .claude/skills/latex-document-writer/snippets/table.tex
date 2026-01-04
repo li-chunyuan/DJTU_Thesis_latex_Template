@@ -1,0 +1,124 @@
+% ============================================
+% 表格模板 (Table Templates)
+% 使用三线表规范，需 booktabs 宏包
+% ============================================
+
+% --------------------------------------------
+% 基础模板
+% --------------------------------------------
+\begin{table}[H]
+  \centering
+  \caption{表格标题}
+  \label{tab:xxx}
+  \begin{tabular}{lcc}
+    \toprule
+    \textbf{列1} & \textbf{列2} & \textbf{列3} \\
+    \midrule
+    内容 & 内容 & 内容 \\
+    内容 & 内容 & 内容 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+% --------------------------------------------
+% 列对齐说明
+% --------------------------------------------
+% l - 左对齐（文本）
+% c - 居中（数值、短文本）
+% r - 右对齐（数字）
+% p{宽度} - 固定宽度，自动换行
+
+% --------------------------------------------
+% 两列表格
+% --------------------------------------------
+\begin{table}[H]
+  \centering
+  \caption{缩略语对照表}
+  \label{tab:terminology}
+  \begin{tabular}{ll}
+    \toprule
+    \textbf{缩略语} & \textbf{全称} \\
+    \midrule
+    GDP  & 国内生产总值 \\
+    CPI  & 消费者价格指数 \\
+    R\&D & 研究与开发 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+% --------------------------------------------
+% 数值对比表格
+% --------------------------------------------
+\begin{table}[H]
+  \centering
+  \caption{各组样本基本情况}
+  \label{tab:comparison}
+  \begin{tabular}{lcc}
+    \toprule
+    \textbf{组别} & \textbf{样本量} & \textbf{平均年龄} \\
+    \midrule
+    实验组 & 120 & 32.5 \\
+    对照组 & 115 & 31.8 \\
+    空白组 & 118 & 33.1 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+% --------------------------------------------
+% 包含代码的表格
+% --------------------------------------------
+\begin{table}[H]
+  \centering
+  \caption{常用命令说明}
+  \label{tab:commands}
+  \begin{tabular}{lll}
+    \toprule
+    \textbf{命令} & \textbf{示例} & \textbf{功能} \\
+    \midrule
+    \texttt{git clone}  & \texttt{git clone <url>}   & 克隆远程仓库 \\
+    \texttt{git commit} & \texttt{git commit -m "msg"} & 提交更改 \\
+    \texttt{git push}   & \texttt{git push origin main} & 推送到远程 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+% --------------------------------------------
+% 多行文本表格（使用 p{} 列）
+% --------------------------------------------
+\begin{table}[H]
+  \centering
+  \caption{研究方法特点对比}
+  \label{tab:methods}
+  \begin{tabular}{lp{8cm}}
+    \toprule
+    \textbf{方法} & \textbf{特点} \\
+    \midrule
+    问卷调查 & 成本较低，可大规模收集数据，但受访者可能存在
+               主观偏差，问卷设计需严谨 \\
+    深度访谈 & 能获取丰富的质性资料，深入了解受访者观点，
+               但样本量有限，耗时较长 \\
+    实地观察 & 可获得第一手真实数据，减少被试效应，
+               但观察者可能影响被观察对象行为 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+% --------------------------------------------
+% 带分组的表格（使用 \cmidrule）
+% --------------------------------------------
+\begin{table}[H]
+  \centering
+  \caption{评价指标体系}
+  \label{tab:indicators}
+  \begin{tabular}{llcc}
+    \toprule
+    \textbf{维度} & \textbf{指标} & \textbf{权重} & \textbf{数据来源} \\
+    \midrule
+    经济效益 & 投资回报率   & 0.25 & 财务报表 \\
+    经济效益 & 成本节约率   & 0.20 & 财务报表 \\
+    \cmidrule{1-4}
+    社会效益 & 满意度评分   & 0.30 & 问卷调查 \\
+    社会效益 & 覆盖人数     & 0.25 & 统计数据 \\
+    \bottomrule
+  \end{tabular}
+\end{table}

@@ -1,0 +1,89 @@
+% ============================================
+% 外部图片模板 (External Image Templates)
+% 适用场景：截图、照片、第三方工具生成的图表
+% ============================================
+
+% --------------------------------------------
+% 基础模板
+% --------------------------------------------
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/文件名.png}
+  \caption{图片说明}
+  \label{fig:xxx}
+\end{figure}
+
+% --------------------------------------------
+% 不同宽度示例
+% --------------------------------------------
+
+% 小图（适合简单图标、小截图）
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{figures/small_image.png}
+  \caption{小尺寸图片示例}
+  \label{fig:small}
+\end{figure}
+
+% 中图（默认推荐）
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\textwidth]{figures/medium_image.png}
+  \caption{中等尺寸图片示例}
+  \label{fig:medium}
+\end{figure}
+
+% 大图（适合需要看清细节的截图）
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{figures/large_image.png}
+  \caption{大尺寸图片示例}
+  \label{fig:large}
+\end{figure}
+
+% 全宽（慎用，可能溢出）
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/full_width.png}
+  \caption{全宽图片示例}
+  \label{fig:full}
+\end{figure}
+
+% --------------------------------------------
+% 指定高度（当宽度不好控制时）
+% --------------------------------------------
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=6cm]{figures/tall_image.png}
+  \caption{按高度缩放的图片}
+  \label{fig:by_height}
+\end{figure}
+
+% --------------------------------------------
+% 并排双图
+% --------------------------------------------
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/image_a.png}
+    \subcaption{图片A说明}
+    \label{fig:side_a}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/image_b.png}
+    \subcaption{图片B说明}
+    \label{fig:side_b}
+  \end{minipage}
+  \caption{并排图片的整体说明}
+  \label{fig:side_by_side}
+\end{figure}
+
+% --------------------------------------------
+% 支持的图片格式
+% --------------------------------------------
+% .png  - 推荐，适合截图、有透明背景的图
+% .jpg  - 适合照片
+% .pdf  - 适合矢量图，缩放不失真

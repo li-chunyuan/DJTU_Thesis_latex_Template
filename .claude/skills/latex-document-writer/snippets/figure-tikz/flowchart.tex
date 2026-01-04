@@ -1,0 +1,90 @@
+% ============================================
+% 流程图模板 (Flowchart Templates)
+% 适用：条件分支、循环结构、步骤流程
+% ============================================
+
+% --------------------------------------------
+% 简单条件分支流程图
+% --------------------------------------------
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}[
+    block/.style={draw, rectangle, rounded corners, 
+                  minimum width=2cm, minimum height=0.8cm},
+    decision/.style={draw, diamond, aspect=2, minimum width=1.5cm},
+    arrow/.style={->, thick}
+  ]
+    \node[block] (start) at (0,0) {开始};
+    \node[decision] (cond) at (0,-1.5) {条件?};
+    \node[block] (yes) at (-2,-3) {处理A};
+    \node[block] (no) at (2,-3) {处理B};
+    \node[block] (end) at (0,-4.5) {结束};
+    
+    \draw[arrow] (start) -- (cond);
+    \draw[arrow] (cond) -- node[left] {是} (yes);
+    \draw[arrow] (cond) -- node[right] {否} (no);
+    \draw[arrow] (yes) |- (end);
+    \draw[arrow] (no) |- (end);
+  \end{tikzpicture}
+  \caption{条件分支流程图}
+  \label{fig:flowchart_simple}
+\end{figure}
+
+% --------------------------------------------
+% 垂直流程图（带循环）
+% --------------------------------------------
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}[
+    startstop/.style={draw, rectangle, rounded corners=10pt, 
+                      minimum width=2.5cm, minimum height=0.8cm, fill=gray!10},
+    process/.style={draw, rectangle, minimum width=2.5cm, minimum height=0.8cm},
+    decision/.style={draw, diamond, aspect=2.5, minimum width=1cm, inner sep=1pt},
+    io/.style={draw, trapezium, trapezium left angle=70, trapezium right angle=110,
+               minimum width=2cm, minimum height=0.8cm},
+    arrow/.style={->, >=stealth, thick}
+  ]
+    \node[startstop] (start) at (0,0) {开始};
+    \node[io] (input) at (0,-1.5) {输入数据};
+    \node[process] (proc1) at (0,-3) {初始化};
+    \node[decision] (dec) at (0,-4.8) {条件满足?};
+    \node[process] (proc2) at (0,-6.6) {执行操作};
+    \node[io] (output) at (0,-8.1) {输出结果};
+    \node[startstop] (end) at (0,-9.6) {结束};
+    
+    \draw[arrow] (start) -- (input);
+    \draw[arrow] (input) -- (proc1);
+    \draw[arrow] (proc1) -- (dec);
+    \draw[arrow] (dec) -- node[right] {是} (proc2);
+    \draw[arrow] (dec.east) -- ++(1.5,0) node[above, midway] {否} |- (output.east);
+    \draw[arrow] (proc2) -- (output);
+    \draw[arrow] (output) -- (end);
+    % 循环箭头
+    \draw[arrow] (proc2.west) -- ++(-1.2,0) |- (dec.west);
+  \end{tikzpicture}
+  \caption{带循环的程序流程图}
+  \label{fig:flowchart_loop}
+\end{figure}
+
+% --------------------------------------------
+% 水平步骤流程图
+% --------------------------------------------
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}[
+    step/.style={draw, rectangle, rounded corners, minimum width=2cm, 
+                 minimum height=1cm, fill=blue!10, align=center},
+    arrow/.style={->, >=stealth, thick, shorten >=2pt, shorten <=2pt}
+  ]
+    \node[step] (s1) at (0,0) {步骤1\\需求分析};
+    \node[step] (s2) at (3.5,0) {步骤2\\方案设计};
+    \node[step] (s3) at (7,0) {步骤3\\实施执行};
+    \node[step] (s4) at (10.5,0) {步骤4\\验收评估};
+    
+    \draw[arrow] (s1) -- (s2);
+    \draw[arrow] (s2) -- (s3);
+    \draw[arrow] (s3) -- (s4);
+  \end{tikzpicture}
+  \caption{工作流程步骤图}
+  \label{fig:flowchart_horizontal}
+\end{figure}

@@ -1,0 +1,182 @@
+% ============================================
+% 关系结构模板 (Relation Diagram Templates)
+% 适用：ER图、网络拓扑、时序图、状态机、类图
+% ============================================
+
+% --------------------------------------------
+% E-R 关系图
+% --------------------------------------------
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}[
+    entity/.style={draw, rectangle, minimum width=2cm, minimum height=1cm,
+                   fill=blue!10, align=center},
+    relation/.style={draw, diamond, aspect=2, fill=yellow!20, 
+                     minimum width=1.5cm, align=center},
+    attr/.style={draw, ellipse, minimum width=1.2cm, fill=green!10, font=\small},
+    arrow/.style={-, thick}
+  ]
+    % 实体
+    \node[entity] (stu) at (0,0) {学生};
+    \node[entity] (course) at (6,0) {课程};
+    
+    % 关系
+    \node[relation] (rel) at (3,0) {选修};
+    
+    % 属性
+    \node[attr] (sid) at (-1.5,1.5) {学号};
+    \node[attr] (sname) at (0,2) {姓名};
+    \node[attr] (sage) at (1.5,1.5) {年龄};
+    
+    \node[attr] (cid) at (4.5,1.5) {课程号};
+    \node[attr] (cname) at (6,2) {课程名};
+    \node[attr] (credit) at (7.5,1.5) {学分};
+    
+    \node[attr] (score) at (3,-1.5) {成绩};
+    
+    % 连接
+    \draw[arrow] (stu) -- (rel) node[midway, above] {n};
+    \draw[arrow] (rel) -- (course) node[midway, above] {m};
+    \draw[arrow] (stu) -- (sid);
+    \draw[arrow] (stu) -- (sname);
+    \draw[arrow] (stu) -- (sage);
+    \draw[arrow] (course) -- (cid);
+    \draw[arrow] (course) -- (cname);
+    \draw[arrow] (course) -- (credit);
+    \draw[arrow] (rel) -- (score);
+  \end{tikzpicture}
+  \caption{学生选课 E-R 关系图}
+  \label{fig:er_diagram}
+\end{figure}
+
+% --------------------------------------------
+% 网络拓扑图（星型结构）
+% --------------------------------------------
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}[
+    server/.style={draw, rectangle, minimum width=1.5cm, minimum height=1cm,
+                   fill=red!20, align=center},
+    client/.style={draw, circle, minimum size=1cm, fill=blue!15},
+    router/.style={draw, regular polygon, regular polygon sides=6, 
+                   minimum size=1.2cm, fill=green!20},
+    conn/.style={-, thick}
+  ]
+    \node[server] (srv) at (0,2) {服务器};
+    \node[router] (r1) at (0,0) {R};
+    \node[client] (c1) at (-3,-2) {C1};
+    \node[client] (c2) at (-1,-2.5) {C2};
+    \node[client] (c3) at (1,-2.5) {C3};
+    \node[client] (c4) at (3,-2) {C4};
+    
+    \draw[conn] (srv) -- (r1);
+    \draw[conn] (r1) -- (c1);
+    \draw[conn] (r1) -- (c2);
+    \draw[conn] (r1) -- (c3);
+    \draw[conn] (r1) -- (c4);
+  \end{tikzpicture}
+  \caption{星型网络拓扑结构}
+  \label{fig:network_topology}
+\end{figure}
+
+% --------------------------------------------
+% 时序图（简化版）
+% --------------------------------------------
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    % 泳道标题
+    \node at (0,0.5) {客户端};
+    \node at (4,0.5) {服务器};
+    \node at (8,0.5) {数据库};
+    
+    % 垂直线
+    \draw[thick] (0,0) -- (0,-6);
+    \draw[thick] (4,0) -- (4,-6);
+    \draw[thick] (8,0) -- (8,-6);
+    
+    % 消息箭头
+    \draw[->, thick] (0,-1) -- (4,-1) node[midway, above] {\small 请求数据};
+    \draw[->, thick] (4,-2) -- (8,-2) node[midway, above] {\small 查询};
+    \draw[<-, thick] (4,-3) -- (8,-3) node[midway, above] {\small 返回结果};
+    \draw[<-, thick] (0,-4) -- (4,-4) node[midway, above] {\small 响应};
+    
+    % 激活框
+    \draw[fill=gray!20] (3.8,-1) rectangle (4.2,-3.5);
+    \draw[fill=gray!20] (7.8,-2) rectangle (8.2,-3);
+  \end{tikzpicture}
+  \caption{客户端-服务器交互时序图}
+  \label{fig:sequence_diagram}
+\end{figure}
+
+% --------------------------------------------
+% 状态机图
+% --------------------------------------------
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}[
+    state/.style={draw, circle, minimum size=1.5cm, align=center},
+    start/.style={draw, circle, fill=black, minimum size=0.3cm},
+    final/.style={draw, double, circle, minimum size=1.5cm},
+    arrow/.style={->, >=stealth, thick, shorten >=2pt, shorten <=2pt}
+  ]
+    \node[start] (init) at (-2,0) {};
+    \node[state] (s1) at (0,0) {空闲};
+    \node[state] (s2) at (3,1.5) {运行};
+    \node[state] (s3) at (3,-1.5) {等待};
+    \node[final] (s4) at (6,0) {结束};
+    
+    \draw[arrow] (init) -- (s1);
+    \draw[arrow] (s1) -- node[above left] {\small 启动} (s2);
+    \draw[arrow] (s1) -- node[below left] {\small 阻塞} (s3);
+    \draw[arrow] (s2) -- node[above right] {\small 完成} (s4);
+    \draw[arrow] (s3) -- node[below right] {\small 唤醒} (s2);
+    \draw[arrow] (s2) to[bend right=30] node[right] {\small 暂停} (s3);
+  \end{tikzpicture}
+  \caption{状态转换图}
+  \label{fig:state_machine}
+\end{figure}
+
+% --------------------------------------------
+% 类图（UML简化版）
+% --------------------------------------------
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}[
+    class/.style={draw, rectangle, minimum width=3cm, align=left, font=\small}
+  ]
+    % 父类
+    \node[class] (animal) at (0,0) {
+      \textbf{Animal} \\
+      \hline
+      - name: String \\
+      - age: int \\
+      \hline
+      + eat(): void \\
+      + sleep(): void
+    };
+    
+    % 子类
+    \node[class] (dog) at (-2.5,-3.5) {
+      \textbf{Dog} \\
+      \hline
+      - breed: String \\
+      \hline
+      + bark(): void
+    };
+    
+    \node[class] (cat) at (2.5,-3.5) {
+      \textbf{Cat} \\
+      \hline
+      - color: String \\
+      \hline
+      + meow(): void
+    };
+    
+    % 继承箭头
+    \draw[->, thick, >=open triangle 60] (dog.north) -- ++(0,0.5) -| (animal.south);
+    \draw[->, thick, >=open triangle 60] (cat.north) -- ++(0,0.5) -| (animal.south);
+  \end{tikzpicture}
+  \caption{类的继承关系图}
+  \label{fig:class_diagram}
+\end{figure}
