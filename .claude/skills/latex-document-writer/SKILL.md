@@ -1,6 +1,6 @@
 ---
 name: latex-document-writer
-description: LaTeX 论文写作助手，专注一切有关latex文档创作。
+description: LaTeX 论文写作助手，负责章节、段落、图表、代码块等正文内容的撰写与组织。不涉及模板格式调整。
 ---
 
 # latex-document-writer
